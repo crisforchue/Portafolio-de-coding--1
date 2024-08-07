@@ -4,6 +4,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+recipient = "forchuel@gmail.com"
 your_email = "forchuecristina0@gmail.com"
 your_password = '6972 0945'  
 

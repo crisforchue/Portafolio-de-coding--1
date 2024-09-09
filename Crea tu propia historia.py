@@ -2,10 +2,12 @@ import random
 
 vida = 100
 puntuacion = 0
-armadura = 50
+armadura = 50 ## Creamos variables para nustro juego, yay
+
+## El codigo usa varias funciones para funcionar, de lo contrario seria mas desorgaizada
 
 def mostrarEstado():
- print(f'\n Vida: {vida}\n Puntuacion: {puntuacion} \n Armadura: {armadura}')
+ print(f'\n Vida: {vida}\n Puntuacion: {puntuacion} \n Armadura: {armadura}') ## Primera funcion, es la mas basica, se usa en muchas otras funciones.
 
 print("Iniciando juego...")
 
@@ -13,29 +15,29 @@ def reiniciarJuego():
     global vida, puntuacion, armadura
     vida = 100
     puntuacion = 0
-    armadura = 50
+    armadura = 50 ##Esta funcio se utiliza cuando reiniciamos el juego, son las confuguraciones originales. 
 
 def explorarHabitacion():
 
-    global vida
+    global vida #usamos la variable global para que la funcion no lo entienda como una variable propia de esta, y podamos seguir utilizandola sin afectar el codigo.
 
-    enemigo_presente = random.choice([True, False])
+    enemigo_presente = random.choice([True, False]) #Esto determina si en la habitacion habra un enemigo
 
     if enemigo_presente:
-        print("enemigo encontrado!")
+        print("enemigo encontrado!") ##Si termina siendo true 
         hablarMaestro()
     else: 
-        print('La habitacion esta vacia, sigue explorando.')
+        print('La habitacion esta vacia, sigue explorando.') ##si termina siendo false 
 
 def hablarMaestro():
 
-    global vida, puntuacion
+    global vida, puntuacion ##Misma razon, aca volvemos usar "global", para poder manipular la variable de vida sin que el codigo entienda que es propio de la funcion
 
     print("Te encontraste con un maestro. te pregunta sobre las tablas de multiplicar.")
 
     respuesta_correcta = False
 
-    while not respuesta_correcta and vida > 0:
+    while not respuesta_correcta and vida > 0: ##Esto es una condicion para poder poner el primer problema dentro del mini juego.
 
         multiplicador = random.randint(1,10)
         multiplicando = random.randint(1,10)
@@ -53,7 +55,7 @@ def hablarMaestro():
 
 def eventoAleatorio():
 
-    global vida, puntuacion, armadura
+    global vida, puntuacion, armadura ##Mismo concepto que las dos anteriores
     
     evento = random.choice(['Encontraste un cofre con tesoros', 'te caiste y pierde 10 de vida', 'Descubriste un atajo secreto'])
 
@@ -95,7 +97,7 @@ def jefeFinal():
             reiniciarJuego()
             break
 
-def jugar_juego():
+def jugar_juego(): ##Aca es donde comenzamos a 
 
     while vida > 0:
         print('\n Te encuentras en un pasillo del castillo!')
@@ -109,7 +111,7 @@ def jugar_juego():
         elif opcion == '3': 
             mostrarEstado()
         else:
-            print('opcion no valida, favor elegir entre las opciones.')
+            print('opcion no valida, favor elegir entre las opciones.') ##Esta sencuencia desencadena los eventos dependiendo lo que se elija, luego va desglosando todo el codigo 
         
         if vida <= 0:
             print("\nPerdiste el juego! tu personaje no tiene vida.")
@@ -122,4 +124,4 @@ def jugar_juego():
             print('\nTu armadura esta rota, perdiste')
             break
 
-jugar_juego()
+jugar_juego() #finalmente, empieza el juego

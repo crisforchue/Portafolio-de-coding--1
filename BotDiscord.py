@@ -1,7 +1,7 @@
 from discord_easy_commands import EasyBot
 import pyjokes
 import discord
-import random
+import random ##Todas las importanciones 
 
 token = 'MTI4ODY3MjUwNzAzMjc2ODU1Ng.GELGCS.-xkUv8feP5sEK97tw2qm_9As-Z5cnSI-u58RGc'
 

@@ -1,0 +1,2 @@
+Pagina para el bot / workspace = https://app.slack.com/client/T07NE4MTQT1/C07NW1HA0BC
+Pagina del API = https://api.slack.com/apps/A07PJQ38RLY/oauth?success=1
